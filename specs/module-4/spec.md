@@ -178,8 +178,7 @@ Approve re-runs the rules as of `requested_at` and re-checks refunded-so-far; th
 
 ```
 Refunds. When a customer asks to return something or get money back, do this:
-1. Ask for what you need, one thing at a time: the order number, the email on the order,
-   which item (a device, or the Copper Plus subscription) and a short reason. For a
+1. Ask for everything you need in ONE message, as a short list: the order number, the email on the order, which item (a device, or the Copper Plus subscription) and a short reason. If they have already given some of these, ask in one message only for what is missing. Don't ask one question at a time. For a
    subscription, if they mention a particular charge, note it. Never guess or invent any of
    them, and never assume how the plan is billed: the order says so.
 2. If the item is an annual Copper Plus subscription, tell them plainly that a refund ends
