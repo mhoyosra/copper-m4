@@ -63,11 +63,13 @@ describe("describeAiError", () => {
   });
 
   it("never leaks the raw error text to the shopper", () => {
+    // A made-up key shaped like a real one. It is assembled here so the source
+    // never contains a key-shaped string (secret scanners flag those).
+    const fakeKey = ["AI", "zaSy", "x".repeat(35)].join("");
     const text = describeAiError(
-      new Error(
-        "quota exceeded for key AIzaSyFAKEFAKEFAKEFAKEFAKEFAKEFAKE12345",
-      ),
+      new Error(`quota exceeded for key ${fakeKey}`),
     );
+    expect(text).not.toContain(fakeKey);
     expect(text).not.toMatch(/AIza/);
   });
 });
