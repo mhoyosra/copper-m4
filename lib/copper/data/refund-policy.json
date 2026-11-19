@@ -1,0 +1,79 @@
+{
+  "_comment": "The only place refund rules, limits and customer-facing text live. Sources: Terms and Conditions 2026.1 and the Copper Plus FAQ (public/docs/). Prompts never contain these numbers.",
+  "autoApprove": { "limitUsd": 50, "windowDays": 90 },
+  "windows": { "deviceReturnDays": 30, "annualPlusDays": 14 },
+  "reviewTargetBusinessDays": 2,
+  "rateLimits": { "submissionsPerEmailPerDay": 3, "failedLookupsPerChat": 3 },
+  "sources": {
+    "terms2": "[Copper State Labs Terms and Conditions, p. 2]",
+    "terms4": "[Copper State Labs Terms and Conditions, p. 4]",
+    "faq5": "[Copper Plus FAQ, p. 5]",
+    "faq6": "[Copper Plus FAQ, p. 6]"
+  },
+  "status": {
+    "escalated": "A Copper Crew supervisor will review this within {reviewDays} business days. Your case number is {caseId}, and you can ask me for its status anytime.",
+    "awaiting_return": "Your return is approved (case {caseId}). Please send the device back with all parts and accessories that came in the box. Your refund goes to your original payment method within 10 business days after we receive it. {terms2}",
+    "refunded": "Your refund of {amount} has been issued to your original payment method (case {caseId}).",
+    "planEnded": " Your Copper Plus plan has ended and your household is back on the Free plan, which keeps your data for 30 days. {faq6}",
+    "rejected": "Your case number is {caseId}.",
+    "declined": "A supervisor reviewed this request and couldn't approve it (case {caseId}). The Copper Crew can tell you more.",
+    "handled_elsewhere": "A supervisor is handling this request directly (case {caseId}). The Copper Crew will follow up."
+  },
+  "needsInfo": {
+    "order_not_found": "I couldn't find an order that matches that order number and email. Please check both and try again.",
+    "item_not_on_order": "That item isn't on this order. Please check the order number and which item you mean.",
+    "which_charge": "There is more than one charge or item that could match. Which one do you mean? Please give me the date or amount.",
+    "confirm_plan_end": "Refunding an annual Copper Plus plan ends it, and your household goes back to the Free plan, which keeps your data for 30 days. Please confirm you want to continue.",
+    "rate_limited": "We've reached today's limit of refund requests for this email. Please try again tomorrow, or contact the Copper Crew.",
+    "lookups_blocked": "I can't check that order right now. Please contact the Copper Crew."
+  },
+  "rules": {
+    "device_return_30d": {
+      "text": "Your device is inside the 30-day return window (counted from the day you received it), so it qualifies for a refund of {amount}. {terms2}"
+    },
+    "device_after_window": {
+      "text": "The 30-day return window has passed, so this device can't be returned. {terms2}",
+      "next": "It may still be covered by the limited warranty, which repairs or replaces devices with manufacturing defects. Contact the Copper Crew with your proof of purchase. {terms3}"
+    },
+    "device_after_window_defect": {
+      "text": "The 30-day return window has passed, so this device can't be returned for a refund. {terms2}",
+      "next": "A defect may be covered by the limited warranty, which repairs or replaces the device. Contact the Copper Crew with your proof of purchase. {terms3}"
+    },
+    "device_not_delivered": {
+      "text": "We don't show this device as received yet, so a person needs to look at this request."
+    },
+    "service_annual_14d": {
+      "text": "Your annual Copper Plus plan is inside the 14-day refund window, so it qualifies for a full refund of {amount}. {faq5}"
+    },
+    "service_annual_after_14d": {
+      "text": "The 14-day refund window for annual Copper Plus has passed, so this charge can't be refunded. {terms4}",
+      "next": "You can still cancel anytime in the Copper app under Settings > Subscription, and you keep Copper Plus until the end of the period you've paid for."
+    },
+    "service_monthly_no_partial": {
+      "text": "Monthly Copper Plus plans aren't refunded for partial months. {terms4}",
+      "next": "You can cancel anytime in the Copper app under Settings > Subscription, and you keep Copper Plus until the end of the period you've paid for."
+    },
+    "service_duplicate_charge": {
+      "text": "We found a duplicate charge for the same billing period, so the extra charge of {amount} qualifies for a refund. Your plan keeps running."
+    },
+    "service_free_plan": {
+      "text": "The Free plan costs nothing, so there is nothing to refund."
+    },
+    "service_billing_error_other": {
+      "text": "A billing problem like this needs a person to look at your account."
+    },
+    "exception_outage_bug": {
+      "text": "Requests about outages or bugs need a supervisor's decision."
+    },
+    "already_refunded": {
+      "text": "This charge has already been refunded."
+    },
+    "over_limit": {
+      "text": "This refund needs a supervisor's approval."
+    },
+    "unfinished_review": {
+      "text": "A person needs to finish reviewing this request."
+    }
+  },
+  "terms3": "[Copper State Labs Terms and Conditions, p. 3]"
+}
