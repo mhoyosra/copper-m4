@@ -7,6 +7,10 @@
 import { stepCountIs } from "ai";
 import { callStream, THOUGHT_SUMMARIES } from "@/lib/ai/call";
 import { createLive, type Live } from "@/lib/ai/live";
+import {
+  describeAiError,
+  GENERIC_MESSAGE,
+} from "@/lib/copper/assistant/errors";
 import { COPPER_INSTRUCTIONS } from "@/lib/copper/assistant/instructions";
 import type { Progress, ToolStep } from "@/lib/copper/assistant/progress";
 import { copperTools } from "@/lib/copper/assistant/tools";
@@ -26,7 +30,7 @@ export type AskCopperResult = { progress: Live<Progress> };
 /** At most this many model steps (tool calls plus the reply) per question. */
 const MAX_STEPS = 5;
 
-const SORRY = "Sorry, something went wrong on my end. Please try again.";
+const SORRY = GENERIC_MESSAGE;
 
 export async function askCopper({
   messages,
@@ -124,9 +128,10 @@ export async function askCopper({
       }
       progress.status = "done";
       if (!progress.reply.trim()) progress.reply = SORRY;
-    } catch {
+    } catch (error) {
       progress.status = "error";
-      if (!progress.reply.trim()) progress.reply = SORRY;
+      // Say what went wrong when we can tell (quota used up, service busy).
+      if (!progress.reply.trim()) progress.reply = describeAiError(error);
     }
     done(snapshot());
   })();
