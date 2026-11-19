@@ -134,7 +134,7 @@ const STARTERS = [
   "Is Copper Notes in Night Sky in stock?",
   "Is Copper Plus cheaper monthly or yearly?",
   // Module 4: refund starters.
-  "I'd like to start a return",
+  "I'd like to start a return or refund",
   "What's the status of my refund request?",
 ];
 
@@ -229,7 +229,9 @@ describe("Part A: the Ask Copper chat widget", () => {
     // Starting a return: Copper asks for the order number, and the starters
     // are gone so they don't compete with the question.
     fireEvent.click(
-      chat.getByRole("button", { name: "I'd like to start a return" }),
+      chat.getByRole("button", {
+        name: "I'd like to start a return or refund",
+      }),
     );
     await waitFor(() =>
       expect(chat.getByText("What's your order number?")).toBeInTheDocument(),

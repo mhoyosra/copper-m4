@@ -43,7 +43,7 @@ const STARTERS = [
   "How much is Copper Home with Copper Plus, paid yearly, for 2 years?",
   "Is Copper Notes in Night Sky in stock?",
   "Is Copper Plus cheaper monthly or yearly?",
-  "I'd like to start a return",
+  "I'd like to start a return or refund",
   "What's the status of my refund request?",
 ];
 
