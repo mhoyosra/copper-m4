@@ -90,7 +90,7 @@ export function CaseActions({
             disabled={pending}
             onClick={() => run(() => declineRequest(caseId, note))}
           >
-            Decline
+            Reject
           </Button>
           {kind === "exception" && (
             <Button

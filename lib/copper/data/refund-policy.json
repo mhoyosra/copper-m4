@@ -16,7 +16,7 @@
     "refunded": "Your refund of {amount} has been issued to your original payment method (case {caseId}).",
     "planEnded": " Your Copper Plus plan has ended and your household is back on the Free plan, which keeps your data for 30 days. {faq6}",
     "rejected": "Your case number is {caseId}.",
-    "declined": "A supervisor reviewed this request and couldn't approve it (case {caseId}). The Copper Crew can tell you more.",
+    "declined": "A supervisor reviewed this request and rejected it, so no refund was issued (case {caseId}). The Copper Crew can tell you more.",
     "handled_elsewhere": "A supervisor is handling this request directly (case {caseId}). The Copper Crew will follow up."
   },
   "needsInfo": {

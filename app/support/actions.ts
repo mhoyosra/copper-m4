@@ -27,7 +27,7 @@ const REASONS: Record<string, string> = {
   not_refundable: "The policy doesn't allow this refund.",
   needs_a_person: "This case needs a person.",
   changed_since_review:
-    "The order changed since this was reviewed, so it can't be approved. Decline it or look at the order.",
+    "The order changed since this was reviewed, so it can't be approved. Reject it or look at the order.",
   order_not_found: "The order for this case wasn't found.",
 };
 

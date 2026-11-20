@@ -51,7 +51,7 @@ const STATUS_LABEL: Record<CaseStatus, string> = {
   awaiting_return: "Waiting for the device",
   refunded: "Refunded",
   rejected: "Rejected by policy",
-  declined: "Declined",
+  declined: "Rejected by a person",
   handled_elsewhere: "Handled outside the system",
 };
 
